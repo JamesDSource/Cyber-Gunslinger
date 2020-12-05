@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://HUD/HealthBar-Assets/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD/HealthBar-Assets/HealthBar 2 - White.png" type="Texture" id=2]
 [ext_resource path="res://HUD/HealthBar-Assets/HealthBar 2 - Over.png" type="Texture" id=3]
+[ext_resource path="res://HUD/AmmoBar-Assets/BulletIcon.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -16,7 +17,7 @@ margin_top = 10.0
 margin_right = 310.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 300, 30 )
-value = 35.0
+value = 100.0
 texture_under = ExtResource( 2 )
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
@@ -36,3 +37,14 @@ text = "100/100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BulletIcon" type="Sprite" parent="."]
+position = Vector2( 25, 335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+offset = Vector2( -4, 0 )
+
+[node name="BulletIcon2" type="Sprite" parent="."]
+position = Vector2( 45, 335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
