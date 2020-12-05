@@ -9,7 +9,7 @@
 [ext_resource path="res://Player/PlayerHand.png" type="Texture" id=7]
 [ext_resource path="res://Player/GunshotSound.wav" type="AudioStream" id=8]
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 6.07219
 height = 20.7407
 
@@ -199,7 +199,7 @@ stream = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.85616, 2.03293 )
-shape = SubResource( 6 )
+shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
