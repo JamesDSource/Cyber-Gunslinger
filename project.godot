@@ -18,6 +18,7 @@ _global_script_class_icons={
 config/name="Codeday Game"
 run/main_scene="res://Game/Game.tscn"
 
+
 [display]
 
 window/size/width=640
