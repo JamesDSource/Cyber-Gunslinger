@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/resume.PNG-b6b9dc099425bdc2f91cde4a9e64e403.stex"
+path="res://.import/BulletIconGrey.png-a73471621eade10546da178e79f27a44.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pause/resume.PNG"
-dest_files=[ "res://.import/resume.PNG-b6b9dc099425bdc2f91cde4a9e64e403.stex" ]
+source_file="res://HUD/AmmoBar-Assets/BulletIconGrey.png"
+dest_files=[ "res://.import/BulletIconGrey.png-a73471621eade10546da178e79f27a44.stex" ]
 
 [params]
 
