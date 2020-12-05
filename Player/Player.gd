@@ -16,7 +16,11 @@ func _process(delta):
 	if animation != animationSet:
 		$AnimationPlayer.play(animation)
 		animationSet = animation
-
+	
+	var gun_angle = rad2deg($Sprite/GunPosition.global_position.angle_to_point(get_global_mouse_position())) + 180
+	$Sprite/GunPosition.scale.y = -1 if gun_angle > 90 && gun_angle < 270 else 1
+	$Sprite/GunPosition.scale.y *= $Sprite.scale.x
+	$Sprite/GunPosition.look_at(get_global_mouse_position())
 func _physics_process(delta):
 	motion.y += GRAVITY
 	
