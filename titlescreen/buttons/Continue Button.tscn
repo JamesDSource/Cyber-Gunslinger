@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://titlescreen/buttons/MenuButton.tscn" type="PackedScene" id=1]
+
+[node name="Continue Button" instance=ExtResource( 1 )]
+margin_left = 207.578
+margin_top = 436.286
+margin_right = 1247.58
+margin_bottom = 456.286
+
+[node name="Label" parent="." index="0"]
+margin_bottom = 88.5636
+text = "C o n t i n u e
+
+"
