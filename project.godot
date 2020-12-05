@@ -16,12 +16,16 @@ _global_script_class_icons={
 [application]
 
 config/name="Codeday Game"
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 run/main_scene="res://Game/Game.tscn"
 =======
 run/main_scene="res://sawblade/sawblade.tscn"
 config/icon="res://icon.png"
 >>>>>>> Stashed changes
+=======
+run/main_scene="res://titlescreen/TitleScreen.tscn"
+>>>>>>> ee20354d6d901303c23cedc62ebe23643ba286d1
 
 [display]
 
