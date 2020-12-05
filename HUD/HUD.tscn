@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://HUD/HealthBar-Assets/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://HUD/HealthBar-Assets/HealthBar 2 - White.png" type="Texture" id=2]
 [ext_resource path="res://HUD/HealthBar-Assets/HealthBar 2 - Over.png" type="Texture" id=3]
 [ext_resource path="res://HUD/AmmoBar-Assets/BulletIcon.png" type="Texture" id=4]
+[ext_resource path="res://HUD/RepeatingTexture.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD/AmmoBar-Assets/BulletIconGrey.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -38,13 +40,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BulletIcon" type="Sprite" parent="."]
-position = Vector2( 25, 335 )
+[node name="RepeatingTexture" parent="." instance=ExtResource( 5 )]
+margin_left = 94.472
+margin_top = 174.737
+margin_right = 94.472
+margin_bottom = 174.737
+hide = 0
+
+[node name="BulletIcon2" type="Sprite" parent="RepeatingTexture"]
+position = Vector2( -50, 160 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="BulletIcon" type="Sprite" parent="RepeatingTexture"]
+position = Vector2( -70, 160 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 4 )
 offset = Vector2( -4, 0 )
 
-[node name="BulletIcon2" type="Sprite" parent="."]
-position = Vector2( 45, 335 )
+[node name="BulletIconGrey" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 10, 335 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
+offset = Vector2( 3, 0 )
+
+[node name="BulletIconGrey2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 37.5612, 335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+offset = Vector2( 3, 0 )
