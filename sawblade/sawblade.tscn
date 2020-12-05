@@ -4,8 +4,8 @@
 [ext_resource path="res://sawblade/Blades.png" type="Texture" id=2]
 [ext_resource path="res://Wall/Wall.tscn" type="PackedScene" id=3]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 21.7025, 18.375 )
+[sub_resource type="CircleShape2D" id=6]
+radius = 15.0
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -33,14 +33,15 @@ animations = [ {
 [node name="Node" type="Node"]
 
 [node name="Sawblade" type="KinematicBody2D" parent="."]
-position = Vector2( 138.316, 243.786 )
+position = Vector2( 138.316, 259.786 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sawblade"]
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sawblade"]
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="RayCast2D" type="RayCast2D" parent="Sawblade"]

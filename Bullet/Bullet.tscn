@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Bullet/Bullet.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Tilesets/Dirt/Dirt.tres" type="TileSet" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32.0788, 31.711 )
@@ -17,9 +16,4 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource( 1 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 32, 32 )
-format = 1
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

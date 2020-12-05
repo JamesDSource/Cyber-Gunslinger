@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const GRAVITY = 10
 const SPEED = 200
-const JUMP = -400
+const JUMP = -300
 
 var animation = "Idle"
 var animationSet = ""
@@ -22,10 +22,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("Left"):
 		motion.x = -SPEED
-		$Sprite.flip_h = true
+		$Sprite.scale.x = -1
 	elif Input.is_action_pressed("Right"):
 		motion.x = SPEED
-		$Sprite.flip_h = false
+		$Sprite.scale.x = 1
 	else:
 		motion.x = 0
 	
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		else:
 			animation = "Run"
 
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("Jump"):
 			motion.y = JUMP
 	else:
 		if motion.y > 0:
