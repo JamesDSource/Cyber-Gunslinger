@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var hurt_groups = []
+export(Array, String, "Player", "Enemies") var exception_groups = []
 var direction = Vector2(1, 1)
 export var speed = 20
 
@@ -12,7 +12,10 @@ func _process(delta):
 	rotation_degrees = rotation_angle
 
 func _on_Hitbox_body_entered(body):
-	for group in hurt_groups:
+	var is_exception = false
+	for group in exception_groups:
 		if body.is_in_group(group): # damage
-			pass
-	queue_free()
+			is_exception = true
+	if !is_exception:
+		#if body.has_method("damage"): body.damage() 
+		queue_free()
