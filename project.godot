@@ -16,11 +16,8 @@ _global_script_class_icons={
 [application]
 
 config/name="Codeday Game"
-<<<<<<< HEAD
-run/main_scene="res://Player/Player.tscn"
+run/main_scene="res://sawblade/sawblade.tscn"
 config/icon="res://icon.png"
-=======
->>>>>>> f23505eb84a6b73ee43186261dbd5cf1a63b6eb4
 
 [input]
 
