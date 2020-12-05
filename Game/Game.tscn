@@ -6,16 +6,16 @@
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 95.399, 173.673 )
+position = Vector2( 95.399, 172.673 )
 
 [node name="Wall" parent="." instance=ExtResource( 2 )]
-position = Vector2( 955, 566 )
-scale = Vector2( 2.87684, 1 )
+position = Vector2( 651.322, 131.184 )
+scale = Vector2( 2.75136, 0.442494 )
 
 [node name="Wall3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 741, 625 )
-scale = Vector2( 2.87684, 1 )
+position = Vector2( 456.385, 167.698 )
+scale = Vector2( 2.75799, 0.370084 )
 
 [node name="Wall2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 731, 728 )
-scale = Vector2( 21.7721, -1.24444 )
+position = Vector2( 439.757, 211.958 )
+scale = Vector2( 11.7516, 0.485585 )
