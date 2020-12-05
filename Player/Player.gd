@@ -34,6 +34,8 @@ func _process(delta):
 	$Sprite/GunPosition.look_at(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("Shoot") && can_shoot && bullets_remaining > 0:
+		$Sprite/GunPosition/AnimationPlayer.play("Shoot")
+		
 		var bullet_instance = bullet.instance()
 		bullet_instance.direction = $Sprite/GunPosition/ShootPosition.global_position.direction_to(get_global_mouse_position())
 		get_tree().root.add_child(bullet_instance)

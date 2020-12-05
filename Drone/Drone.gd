@@ -29,7 +29,10 @@ func _process(delta):
 		$Sight.cast_to = target.global_position - global_position
 		if $Sight.is_colliding() && $Sight.get_collider() == target:
 			can_see = true
-	
+		
+		var eye_direction = $Sight.cast_to.normalized()
+		$Sprite/Eye.position = $Sprite/Eye.position.linear_interpolate(eye_direction * 6, 10 * delta)
+		
 	match(state):
 		STATE.IDLE:
 			if target != null && can_see:
