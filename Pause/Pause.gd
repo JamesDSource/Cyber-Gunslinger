@@ -1,20 +1,16 @@
 extends Control
 
-var pauseState
-
 func _input(event):
 	if event.is_action_pressed("Pause"):
-		pauseState = not get_tree().paused
-		get_tree().paused = pauseState
-		visible = pauseState
+		get_tree().paused = !get_tree().paused
+		visible = !visible
 
 
 
 func _on_Resume_pressed():
-	pauseState = not get_tree().paused
-	get_tree().paused = pauseState
-	visible = pauseState
+	get_tree().paused = !get_tree().paused
+	visible = !visible
 
 
 func _on_Quit_pressed():
-	pass
+	get_tree().quit()
