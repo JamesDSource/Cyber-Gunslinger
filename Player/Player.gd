@@ -14,16 +14,21 @@ var animationSet = ""
 
 var motion = Vector2()
 
-var hp_max = 8
+var hp_max = 8.0
 var hp = hp_max
 
 func damage(hp_damage):
 	hp = max(hp - hp_damage, 0)
+	$CanvasLayer/HUD/HealthBar.value = 100*(hp/hp_max)
+	$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
 
 func _ready():
+	damage(0)
 	add_to_group("Player")
 
 func _process(delta):
+	$CanvasLayer/HUD/RepeatingTexture.hide = bullets - bullets_remaining
+	
 	if animation != animationSet:
 		$AnimationPlayer.play(animation)
 		animationSet = animation
@@ -34,6 +39,8 @@ func _process(delta):
 	$Sprite/GunPosition.look_at(get_global_mouse_position())
 	
 	if Input.is_action_just_pressed("Shoot") && can_shoot && bullets_remaining > 0:
+		$Sprite/GunPosition/AnimationPlayer.play("Shoot")
+		
 		var bullet_instance = bullet.instance()
 		bullet_instance.direction = $Sprite/GunPosition/ShootPosition.global_position.direction_to(get_global_mouse_position())
 		get_tree().root.add_child(bullet_instance)
