@@ -9,10 +9,10 @@
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -414.469
-margin_top = -98.4642
-margin_right = -414.469
-margin_bottom = -98.4642
+margin_left = -454.902
+margin_top = -124.627
+margin_right = -454.902
+margin_bottom = -124.627
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
