@@ -14,16 +14,21 @@ var animationSet = ""
 
 var motion = Vector2()
 
-var hp_max = 8
+var hp_max = 8.0
 var hp = hp_max
 
 func damage(hp_damage):
 	hp = max(hp - hp_damage, 0)
+	$CanvasLayer/HUD/HealthBar.value = 100*(hp/hp_max)
+	$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
 
 func _ready():
+	damage(0)
 	add_to_group("Player")
 
 func _process(delta):
+	$CanvasLayer/HUD/RepeatingTexture.hide = bullets - bullets_remaining
+	
 	if animation != animationSet:
 		$AnimationPlayer.play(animation)
 		animationSet = animation

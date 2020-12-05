@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player/Gun.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Player/PlayerIdle.png" type="Texture" id=6]
 [ext_resource path="res://Player/PlayerHand.png" type="Texture" id=7]
 [ext_resource path="res://Player/GunshotSound.wav" type="AudioStream" id=8]
+[ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=6]
 resource_name = "Shoot"
@@ -236,5 +237,9 @@ one_shot = true
 
 [node name="ReloadTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 9 )]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_ReloadTimer_timeout"]

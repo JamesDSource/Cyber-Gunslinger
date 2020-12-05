@@ -12,6 +12,9 @@ var velocity = Vector2()
 var speed = 100
 var acceleration = 50
 
+onready var bullet = load("res://Drone/DroneBullet.tscn")
+var can_shoot = true
+
 var hp = 3
 func damage(hp_damage):
 	hp = max(hp - hp_damage, 0)
@@ -49,6 +52,14 @@ func _process(delta):
 		STATE.ATTACK:
 			if !can_see:
 				state = STATE.CHASE
+			elif can_shoot:
+				$Sprite/Eye/AudioStreamPlayer2D.play()
+				var bullet_instance = bullet.instance()
+				bullet_instance.direction = $Sight.cast_to.normalized()
+				get_tree().root.add_child(bullet_instance)
+				bullet_instance.global_position = $Sprite/Eye.global_position
+				can_shoot = false;
+				$ShootTimer.start()
 
 func _physics_process(delta):
 	velocity = velocity.linear_interpolate(move_direction*speed, acceleration*delta)
@@ -58,3 +69,7 @@ func _physics_process(delta):
 func _on_DetectionRadius_body_entered(body):
 	if body.is_in_group("Player"):
 		target = body
+
+
+func _on_ShootTimer_timeout():
+	can_shoot = true
