@@ -9,10 +9,10 @@
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -454.902
-margin_top = -124.627
-margin_right = -454.902
-margin_bottom = -124.627
+margin_left = -414.469
+margin_top = -98.4642
+margin_right = -414.469
+margin_bottom = -98.4642
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -28,7 +28,7 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="Menu"]
-margin_right = 1040.0
+margin_right = 1039.0
 margin_bottom = 190.0
 rect_pivot_offset = Vector2( 517.105, 21.246 )
 texture = ExtResource( 2 )
@@ -36,12 +36,12 @@ stretch_mode = 4
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
 margin_top = 194.0
-margin_right = 1040.0
+margin_right = 1039.0
 margin_bottom = 560.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 518.0
+margin_right = 517.0
 margin_bottom = 366.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -50,14 +50,14 @@ alignment = 1
 
 [node name="NewGameButton2" parent="Menu/CenterRow/Buttons" instance=ExtResource( 3 )]
 margin_top = 73.0
-margin_right = 518.0
+margin_right = 517.0
 margin_bottom = 133.0
 rect_rotation = 0.0
 
 [node name="Continue Button" parent="Menu/CenterRow/Buttons" instance=ExtResource( 4 )]
 margin_left = 0.0
 margin_top = 153.0
-margin_right = 518.0
+margin_right = 517.0
 margin_bottom = 213.0
 rect_rotation = 0.0
 rect_pivot_offset = Vector2( 189.518, 2.40753 )
@@ -65,13 +65,13 @@ rect_pivot_offset = Vector2( 189.518, 2.40753 )
 [node name="OptionsButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 1 )]
 margin_left = 0.0
 margin_top = 233.0
-margin_right = 518.0
+margin_right = 517.0
 margin_bottom = 293.0
 rect_rotation = 0.0
 
 [node name="CenterContainer" type="CenterContainer" parent="Menu/CenterRow"]
-margin_left = 522.0
-margin_right = 1040.0
+margin_left = 521.0
+margin_right = 1039.0
 margin_bottom = 366.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
