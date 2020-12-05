@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Codeday Game"
+run/main_scene="res://titlescreen/TitleScreen.tscn"
 
 [display]
 
