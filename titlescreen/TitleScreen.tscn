@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://titlescreen/buttons/OptionsButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sawblade/cyberredneck.png" type="Texture" id=2]
 [ext_resource path="res://titlescreen/buttons/NewGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://titlescreen/buttons/Continue Button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://titlescreen/TitleScreen.gd" type="Script" id=5]
-[ext_resource path="res://fadeIn.tscn" type="PackedScene" id=6]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -85,8 +84,6 @@ margin_left = 259.0
 margin_top = 183.0
 margin_right = 259.0
 margin_bottom = 183.0
-
-[node name="fadeIn" parent="." instance=ExtResource( 6 )]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/NewGameButton2" to="." method="_on_NewGameButton2_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/Continue Button" to="." method="_on_Continue_Button_pressed"]
 [connection signal="pressed" from="Menu/CenterRow/Buttons/OptionsButton" to="." method="_on_OptionsButton_pressed"]

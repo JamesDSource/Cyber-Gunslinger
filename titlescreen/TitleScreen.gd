@@ -17,17 +17,17 @@ func _ready():
 
 
 func _on_NewGameButton2_pressed():
-	get_tree().change_sceen("res://Game/Game.tscn")
+	get_tree().change_scene("res://Game/Game.tscn")
 	pass # Replace with function body.
 	
 
 func _on_Continue_Button_pressed():
-	get_tree().change_sceen("res://Game/Game.tscn")
+	get_tree().change_scene("res://Game/Game.tscn")
 	pass # Replace with function body.
 	
 
 
 
 func _on_OptionsButton_pressed():
-	get_tree().change_sceen("res://Game/Game.tscn")
+	get_tree().change_scene("res://Game/Game.tscn")
 	pass # Replace with function body.
