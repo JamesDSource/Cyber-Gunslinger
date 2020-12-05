@@ -41,7 +41,7 @@ shape = SubResource( 6 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sawblade"]
 frames = SubResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="RayCast2D" type="RayCast2D" parent="Sawblade"]
