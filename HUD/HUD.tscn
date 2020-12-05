@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://HUD/HealthBar-Assets/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD/HealthBar-Assets/HealthBar 2 - White.png" type="Texture" id=2]
+[ext_resource path="res://HUD/HealthBar-Assets/HealthBar 2 - Over.png" type="Texture" id=3]
+[ext_resource path="res://HUD/AmmoBar-Assets/BulletIcon.png" type="Texture" id=4]
+[ext_resource path="res://HUD/RepeatingTexture.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD/AmmoBar-Assets/BulletIconGrey.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="HUD" type="Node2D"]
+
+[node name="HealthBar" type="TextureProgress" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 310.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 30 )
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+tint_under = Color( 0.376471, 0.376471, 0.376471, 1 )
+tint_progress = Color( 0.0705882, 0.839216, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 115.0
+margin_top = 12.5
+margin_right = 215.0
+margin_bottom = 40.5
+custom_fonts/font = SubResource( 1 )
+text = "100/100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RepeatingTexture" parent="." instance=ExtResource( 5 )]
+margin_left = 94.472
+margin_top = 174.737
+margin_right = 94.472
+margin_bottom = 174.737
+hide = 0
+
+[node name="BulletIcon2" type="Sprite" parent="RepeatingTexture"]
+position = Vector2( -50, 160 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+
+[node name="BulletIcon" type="Sprite" parent="RepeatingTexture"]
+position = Vector2( -70, 160 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+offset = Vector2( -4, 0 )
+
+[node name="BulletIconGrey" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 10, 335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+offset = Vector2( 3, 0 )
+
+[node name="BulletIconGrey2" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 37.5612, 335 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+offset = Vector2( 3, 0 )
