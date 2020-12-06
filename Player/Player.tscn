@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player/Gun.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=9]
 [ext_resource path="res://HUD/HealthBar-Assets/Xolonium-Regular.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Death Screen/DeathScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Player/ReloadSound.wav" type="AudioStream" id=12]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Shoot"
@@ -221,6 +222,9 @@ volume_db = -10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/GunPosition"]
 anims/Shoot = SubResource( 1 )
+
+[node name="ReloadSound" type="AudioStreamPlayer2D" parent="Sprite/GunPosition"]
+stream = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.85616, 2.03293 )

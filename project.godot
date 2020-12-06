@@ -24,6 +24,7 @@ window/size/width=640
 window/size/height=360
 window/size/resizable=false
 window/size/fullscreen=true
+mouse_cursor/custom_image="res://MouseCursor.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 

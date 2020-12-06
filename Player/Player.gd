@@ -131,3 +131,4 @@ func rotate_gun():
 
 func _on_ReloadTimer_timeout():
 	bullets_remaining += 1
+	$Sprite/GunPosition/ReloadSound.play()
