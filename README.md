@@ -5,10 +5,13 @@
 A 2D cyberpunk platformer built with the Godot engine.
 
 **Controls**
+
 Left Click/Left Alt: Fire shotgun
-W: Jump
+
+W/Space: Jump
+
 A: Move Left
+
 D: Move Right
 
-**WIP**
 R: Reload
