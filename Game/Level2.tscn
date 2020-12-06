@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Tilesets/Metal/Metal.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 20 )
+
+[sub_resource type="NavigationPolygon" id=2]
+
+[node name="Level2" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131078, 0, 196608, 131079, 0, 196610, 196619, 0, 0, 196620, 0, 2, 262155, 0, 131072, 262156, 0, 196613, 262157, 0, 196609, 262158, 0, 196610, 327681, 0, 0, 327682, 0, 2, 393217, 0, 65536, 393218, 0, 65538, 393223, 0, 0, 393224, 0, 2, 393232, 0, 0, 393233, 0, 1, 393234, 0, 2, 458753, 0, 65536, 458754, 0, 131077, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458759, 0, 131078, 458760, 0, 65538, 458768, 0, 65536, 458769, 0, 65537, 458770, 0, 65538, 524289, 0, 65536, 524290, 0, 65537, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 131077, 524297, 0, 1, 524298, 0, 1, 524299, 0, 1, 524300, 0, 1, 524301, 0, 1, 524302, 0, 1, 524303, 0, 1, 524304, 0, 131078, 524305, 0, 65537, 524306, 0, 65538, 589825, 0, 131072, 589826, 0, 131073, 589827, 0, 131073, 589828, 0, 131073, 589829, 0, 131073, 589830, 0, 131073, 589831, 0, 131073, 589832, 0, 131073, 589833, 0, 131073, 589834, 0, 131073, 589835, 0, 131073, 589836, 0, 131073, 589837, 0, 131073, 589838, 0, 131073, 589839, 0, 131073, 589840, 0, 131073, 589841, 0, 131073, 589842, 0, 131074 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 46.669, 137.179 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 3 )]
+visible = false
+
+[node name="Portal" type="Area2D" parent="."]
+position = Vector2( 232.638, 47.3762 )
+
+[node name="icon" type="Sprite" parent="Portal"]
+position = Vector2( 3.2367, -8.37648 )
+scale = Vector2( 0.657495, 0.723786 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+shape = SubResource( 1 )
+
+[node name="Sawblade" parent="." instance=ExtResource( 5 )]
+position = Vector2( 491.439, 236.881 )
+
+[node name="Sawblade2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 113.844, 203.647 )
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 2 )

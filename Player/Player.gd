@@ -89,4 +89,7 @@ func _on_ShootTimer_timeout():
 
 
 func _on_ReloadTimer_timeout():
-	bullets_remaining = bullets
+	#Play reload sound here
+	bullets_remaining += 1
+	yield(get_tree().create_timer(0.3), "timeout")
+	bullets_remaining += 1
