@@ -60,6 +60,8 @@ func _process(delta):
 		
 		can_shoot = false
 		$ShootTimer.start()
+		
+	#This is meant to manually start a reload, but it doesn't seem to work properly.
 	if Input.is_action_pressed("Reload"):
 		can_shoot = false
 		$ShootTimer.start()
