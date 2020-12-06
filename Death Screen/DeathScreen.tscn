@@ -9,10 +9,10 @@
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 54.1857
-margin_top = 102.661
-margin_right = 563.186
-margin_bottom = 150.661
+margin_left = 210.984
+margin_top = 127.0
+margin_right = 719.984
+margin_bottom = 186.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0.803922, 0.0901961, 0.0901961, 1 )
 custom_constants/shadow_offset_x = 0
@@ -37,7 +37,25 @@ __meta__ = {
 
 [node name="Button" type="Sprite" parent="Restart"]
 show_behind_parent = true
-position = Vector2( 69.7526, 22.142 )
-scale = Vector2( 0.356302, 0.10895 )
+position = Vector2( 76.1068, 26.5267 )
+scale = Vector2( 0.355052, 0.136506 )
+texture = ExtResource( 3 )
+
+[node name="MainMenu" type="Button" parent="."]
+margin_left = 255.0
+margin_top = 288.0
+margin_right = 455.0
+margin_bottom = 319.0
+custom_fonts/font = ExtResource( 4 )
+text = "main menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Sprite" parent="MainMenu"]
+show_behind_parent = true
+position = Vector2( 96.5527, 14.6832 )
+scale = Vector2( 0.523157, 0.143209 )
 texture = ExtResource( 3 )
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_MainMenu_pressed"]
