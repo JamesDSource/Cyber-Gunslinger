@@ -4,4 +4,4 @@ func _physics_process(delta):
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.name == "Player":
-			get_tree().change_scene("res://Game/Level5.tscn")
+			get_tree().change_scene("res://finish/congrats.tscn")

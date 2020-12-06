@@ -7,7 +7,12 @@
 [ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Game/Area2D.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="NavigationPolygon" id=1]
+vertices = PoolVector2Array( 50.0995, 4.183, 51.0995, 76.183, -125.9, 75.183, -122.9, -54.817, 403.1, -56.817, 404.1, 0.182999 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 3, 4, 5 ) ]
+outlines = [ PoolVector2Array( -122.9, -54.817, 403.1, -56.817, 404.1, 0.182999, 50.0995, 4.183, 51.0995, 76.183, -125.9, 75.183 ) ]
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 17.6202, 18.4653 )
 
 [node name="Level5" type="Node"]
@@ -25,9 +30,15 @@ position = Vector2( 80.1809, 272.615 )
 position = Vector2( 168.38, 115.817 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 1 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 5 )]
-position = Vector2( 121.471, 24.3997 )
+position = Vector2( 178.471, -15.6003 )
+
+[node name="Drone2" parent="Navigation2D" instance=ExtResource( 5 )]
+
+[node name="Drone3" parent="Navigation2D" instance=ExtResource( 5 )]
+position = Vector2( -105, 57 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 1 )]
 position = Vector2( 541.666, 174.737 )
@@ -38,14 +49,19 @@ position = Vector2( 315, 233.415 )
 [node name="Sawblade3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 121.288, 303.026 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Portal5" type="Area2D" parent="."]
 position = Vector2( 620.956, 142.716 )
 script = ExtResource( 6 )
 
-[node name="icon" type="Sprite" parent="Area2D"]
+[node name="icon" type="Sprite" parent="Portal5"]
 position = Vector2( 3.05176e-05, 0 )
 scale = Vector2( 0.735515, 0.666851 )
 texture = ExtResource( 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal5"]
+shape = SubResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 6 )]
+visible = false
