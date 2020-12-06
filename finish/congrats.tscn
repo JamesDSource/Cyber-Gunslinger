@@ -6,24 +6,22 @@
 [ext_resource path="res://Pause/theme.tres" type="Theme" id=4]
 
 [node name="Control" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 169.569
-margin_top = 46.9087
-margin_right = 209.569
-margin_bottom = 86.9087
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Restart" type="Button" parent="."]
-margin_left = -136.7
-margin_top = -94.9283
-margin_right = 76.3003
-margin_bottom = -60.9283
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -68.5
+margin_right = 110.0
+margin_bottom = -33.5
 custom_fonts/font = ExtResource( 1 )
 text = "replay"
 script = ExtResource( 2 )
@@ -32,10 +30,14 @@ __meta__ = {
 }
 
 [node name="StartMenu" type="Button" parent="."]
-margin_left = -153.518
-margin_top = -26.2012
-margin_right = 76.4823
-margin_bottom = 8.79884
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = -8.5
+margin_right = 110.0
+margin_bottom = 26.5
 custom_fonts/font = ExtResource( 1 )
 text = "main menu"
 script = ExtResource( 3 )
@@ -45,12 +47,13 @@ __meta__ = {
 
 [node name="Exit" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -156.7
-margin_right = 43.3003
-margin_bottom = 33.0
+anchor_bottom = 0.5
+margin_left = -110.0
+margin_top = 53.5
+margin_right = 110.0
+margin_bottom = 88.5
 custom_fonts/font = ExtResource( 1 )
 text = "exit"
 __meta__ = {
@@ -60,10 +63,10 @@ __meta__ = {
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -238.523
-margin_top = -150.248
-margin_right = 233.477
-margin_bottom = -120.248
+margin_left = -174.5
+margin_top = 53.0
+margin_right = 174.5
+margin_bottom = 73.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color_shadow = Color( 0.0862745, 0.176471, 0.901961, 1 )
 custom_constants/shadow_offset_x = 0
