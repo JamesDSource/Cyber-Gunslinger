@@ -14,6 +14,7 @@ var acceleration = 50
 
 onready var bullet = load("res://Drone/DroneBullet.tscn")
 var can_shoot = true
+var bullets_remaining = 0
 
 var hp = 3
 func damage(hp_damage):
@@ -25,6 +26,7 @@ onready var nav = get_parent()
 
 func _ready():
 	add_to_group("Enemies")
+	$RechargeTimer.start()
 	
 func _process(delta):
 	var can_see = false
@@ -52,7 +54,7 @@ func _process(delta):
 		STATE.ATTACK:
 			if !can_see:
 				state = STATE.CHASE
-			elif can_shoot:
+			elif can_shoot && bullets_remaining > 0:
 				$Sprite/Eye/AudioStreamPlayer2D.play()
 				var bullet_instance = bullet.instance()
 				bullet_instance.direction = $Sight.cast_to.normalized()
@@ -60,6 +62,10 @@ func _process(delta):
 				bullet_instance.global_position = $Sprite/Eye.global_position
 				can_shoot = false;
 				$ShootTimer.start()
+				
+				bullets_remaining-=1
+				if bullets_remaining <= 0:
+					$RechargeTimer.start()
 
 func _physics_process(delta):
 	velocity = velocity.linear_interpolate(move_direction*speed, acceleration*delta)
@@ -73,3 +79,7 @@ func _on_DetectionRadius_body_entered(body):
 
 func _on_ShootTimer_timeout():
 	can_shoot = true
+
+
+func _on_RechargeTimer_timeout():
+	bullets_remaining = 3
