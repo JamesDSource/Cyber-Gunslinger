@@ -43,15 +43,17 @@ position = Vector2( 336, 48 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
 position = Vector2( 568, 110 )
+direction = Vector2( 1, 0 )
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 750.242, 19.799 )
 script = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="Portal"]
-position = Vector2( 1.33087, -6.49069 )
+position = Vector2( -18.6691, -10.4907 )
 scale = Vector2( 0.529374, 0.668543 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+position = Vector2( -22, -8 )
 shape = SubResource( 2 )
