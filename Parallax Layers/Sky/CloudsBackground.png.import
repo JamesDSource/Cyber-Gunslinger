@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/CloudsBackground.png-65a5ff0ce115003bd79559f9ab0ce3f3.stex"
+path="res://.import/CloudsBackground.png-3ace131dfa8bfb03e105f6824cce42e1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Logo/CloudsBackground.png"
-dest_files=[ "res://.import/CloudsBackground.png-65a5ff0ce115003bd79559f9ab0ce3f3.stex" ]
+source_file="res://Parallax Layers/Sky/CloudsBackground.png"
+dest_files=[ "res://.import/CloudsBackground.png-3ace131dfa8bfb03e105f6824cce42e1.stex" ]
 
 [params]
 
