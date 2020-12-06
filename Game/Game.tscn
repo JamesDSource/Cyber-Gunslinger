@@ -19,7 +19,7 @@ extents = Vector2( 16, 20 )
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 95.399, 172.673 )
+position = Vector2( 92.399, 166.673 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -39,24 +39,19 @@ position = Vector2( 0, -64 )
 navpoly = SubResource( 1 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 4 )]
-position = Vector2( 338.121, 49.4142 )
-
-[node name="Drone2" parent="Navigation2D" instance=ExtResource( 4 )]
-position = Vector2( 1130.07, 23.181 )
+position = Vector2( 330, 36 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
 position = Vector2( 568, 110 )
-direction = Vector2( 1, 0 )
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 750.242, 19.799 )
 script = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="Portal"]
-position = Vector2( 545.602, 157.495 )
-scale = Vector2( 0.823347, 0.770912 )
+position = Vector2( 1.33087, -6.49069 )
+scale = Vector2( 0.529374, 0.668543 )
 texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
-position = Vector2( 546.122, 158.806 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
