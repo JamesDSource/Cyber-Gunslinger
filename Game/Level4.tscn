@@ -47,10 +47,14 @@ shape = SubResource( 1 )
 [node name="Sawblade" parent="." instance=ExtResource( 6 )]
 position = Vector2( 205.769, 242.538 )
 
+[node name="Sawblade2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 342.948, 235.467 )
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
+position = Vector2( -33.9412, -14.8493 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 2 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 7 )]
-position = Vector2( 539.524, 129.401 )
+position = Vector2( 531.039, 118.087 )
