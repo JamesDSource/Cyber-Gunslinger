@@ -9,7 +9,7 @@
 [ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20, 16 )
+extents = Vector2( 22, 16 )
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 201.007, 75.4162, 580.724, 75.4162, 580.017, 144.006, 199.592, 143.299 )
@@ -42,6 +42,7 @@ scale = Vector2( 0.679591, 0.53596 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal4"]
+position = Vector2( 2.82843, 0 )
 shape = SubResource( 1 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 6 )]
