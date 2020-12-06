@@ -1,20 +1,15 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tilesets/Metal/Metal.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Game/Portal2.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17, 20 )
 
 [sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 329.699, 171.582, 432.229, 171.582, 431.522, 183.603, 314.142, 183.603, 314.849, 149.662, 329.699, 109.357, 167.064, 110.064, 168.478, 148.248, 143.73, 148.248, 144.437, 92.3862, 53.9269, 93.0933, 53.9269, 56.3238, 167.064, 55.6167 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 3, 4, 5 ), PoolIntArray( 6, 5, 4, 7 ), PoolIntArray( 7, 8, 9, 6 ), PoolIntArray( 9, 10, 11, 12 ), PoolIntArray( 9, 12, 6 ), PoolIntArray( 7, 6, 7 ) ]
-outlines = [ PoolVector2Array( 53.9269, 56.3238, 167.064, 55.6167, 167.064, 110.064, 329.699, 109.357, 329.699, 171.582, 432.229, 171.582, 431.522, 183.603, 314.142, 183.603, 314.849, 149.662, 168.478, 148.248, 168.478, 148.248, 143.73, 148.248, 144.437, 92.3862, 53.9269, 93.0933 ) ]
 
 [node name="Level2" type="Node"]
 
@@ -37,7 +32,6 @@ visible = false
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 232.638, 47.3762 )
-script = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="Portal"]
 position = Vector2( 3.2367, -8.37648 )
@@ -57,6 +51,3 @@ position = Vector2( 113.844, 203.647 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 2 )
-
-[node name="Drone" parent="Navigation2D" instance=ExtResource( 6 )]
-position = Vector2( 161.22, 135.765 )
