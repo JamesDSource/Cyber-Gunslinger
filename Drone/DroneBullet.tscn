@@ -5,7 +5,7 @@
 
 [node name="Bullet" instance=ExtResource( 1 )]
 exception_groups = [ "Enemies" ]
-speed = 10
+speed = 6
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
