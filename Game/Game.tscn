@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tilesets/Dirt/Dirt.tres" type="TileSet" id=2]
@@ -7,8 +7,6 @@
 [ext_resource path="res://sawblade/Sawblade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://icon.png" type="Texture" id=6]
 [ext_resource path="res://Game/Portal.gd" type="Script" id=7]
-[ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Logo/CloudsBackground.png" type="Texture" id=9]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 64, 64, 64, 0, 640, 0, 360, 64, 640, 128, 568, 128, 568, 64, 360, 128, 232, 128, 232, 192, 64, 192 )
@@ -21,7 +19,7 @@ extents = Vector2( 16, 20 )
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 174.399, 170.173 )
+position = Vector2( 92.399, 166.673 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -41,7 +39,7 @@ position = Vector2( 0, -64 )
 navpoly = SubResource( 1 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 4 )]
-position = Vector2( 336, 48 )
+position = Vector2( 330, 36 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
 position = Vector2( 568, 110 )

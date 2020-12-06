@@ -75,21 +75,19 @@ position = Vector2( 1550.93, 274.885 )
 navpoly = SubResource( 2 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 6 )]
-visible = false
 position = Vector2( 280.569, 97.2742 )
 
 [node name="Drone2" parent="Navigation2D" instance=ExtResource( 6 )]
-visible = false
 position = Vector2( 1209.66, 66.1611 )
 
 [node name="Drone3" parent="Navigation2D" instance=ExtResource( 6 )]
-visible = false
 position = Vector2( 1534.93, 28.5243 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 1280, 960 )
+motion_scale = Vector2( 0.2, 0 )
+motion_mirroring = Vector2( 512, 256 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/sky"]
 position = Vector2( 35.5612, -31.3274 )
