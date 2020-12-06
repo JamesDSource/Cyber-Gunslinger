@@ -55,21 +55,32 @@ position = Vector2( 1129.44, 23.811 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
 position = Vector2( 568, 110 )
+<<<<<<< Updated upstream
 
 [node name="Sawblade2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 1120.06, 209.304 )
 direction = Vector2( -1, 0 )
+=======
+>>>>>>> Stashed changes
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 773.242, 19.799 )
 script = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="Portal"]
+<<<<<<< Updated upstream
 position = Vector2( 545.917, 158.283 )
+=======
+position = Vector2( 1.33087, -6.49069 )
+>>>>>>> Stashed changes
 scale = Vector2( 0.529374, 0.668543 )
 texture = ExtResource( 6 )
 hframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal"]
+<<<<<<< Updated upstream
 position = Vector2( 545.807, 160.066 )
 shape = SubResource( 4 )
+=======
+shape = SubResource( 2 )
+>>>>>>> Stashed changes
