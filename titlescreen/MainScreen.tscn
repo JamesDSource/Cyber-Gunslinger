@@ -50,6 +50,6 @@ margin_top = 172.0
 margin_right = 368.0
 margin_bottom = 203.0
 text = "Exit"
-[connection signal="pressed" from="CenterContainer/VBoxContainer/StartGame" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartGame" to="." method="_on_StartGame_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartGame" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_Exit_pressed"]

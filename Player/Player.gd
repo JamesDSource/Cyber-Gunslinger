@@ -29,8 +29,12 @@ enum PLAYERSTATE {
 }
 var state = PLAYERSTATE.FREE
 
+var screen_shake_time_remaining = 0
+var rng = RandomNumberGenerator.new()
+
 func damage(hp_damage):
 	if iframes_remaing <= 0:
+		screen_shake_time_remaining = 0.5
 		hp = max(hp - hp_damage, 0)
 		$CanvasLayer/HUD/HealthBar.value = 100*(hp/hp_max)
 		$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
@@ -43,6 +47,13 @@ func _ready():
 	add_to_group("Player")
 
 func _process(delta):
+	if screen_shake_time_remaining > 0: 
+		screen_shake_time_remaining = max(screen_shake_time_remaining-delta, 0)
+		$Camera2D.position = Vector2(rng.randi_range(-20, 20), rng.randi_range(-20, 20))
+	else:
+		$Camera2D.position = Vector2()
+	
+	
 	iframes_remaing -= delta
 	$CanvasLayer/HUD/RepeatingTexture.hide = bullets - bullets_remaining
 	
