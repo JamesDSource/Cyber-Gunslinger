@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 26.9906
-height = 0.0
+height = 28.6006
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 201.007, 75.4162, 580.724, 75.4162, 580.017, 144.006, 199.592, 143.299 )
@@ -39,13 +39,13 @@ position = Vector2( 1903.99, 68.1819 )
 script = ExtResource( 5 )
 
 [node name="icon" type="Sprite" parent="Portal4"]
-position = Vector2( -915.316, -346.059 )
-scale = Vector2( 2.13714, 1.15722 )
+position = Vector2( -914.055, -373.811 )
+scale = Vector2( 2.30532, 2.54483 )
 texture = ExtResource( 3 )
 hframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portal4"]
-position = Vector2( -915.316, -346.059 )
+position = Vector2( -915.316, -357.059 )
 shape = SubResource( 1 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 6 )]
@@ -73,7 +73,7 @@ position = Vector2( 1834.41, 151.649 )
 position = Vector2( 475.147, 140.649 )
 
 [node name="Drone4" parent="Navigation2D" instance=ExtResource( 7 )]
-position = Vector2( 870.26, -144.134 )
+position = Vector2( 869.815, -144.134 )
 
 [node name="Sawblade3" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1111.53, 109.8 )
