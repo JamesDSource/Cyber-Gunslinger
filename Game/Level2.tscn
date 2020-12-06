@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Tilesets/Dirt/Dirt.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Portal2.gd" type="Script" id=7]
+[ext_resource path="res://Logo/CloudsBackground.png" type="Texture" id=8]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 16.8552
@@ -29,7 +30,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 46.669, 137.179 )
+position = Vector2( 52.472, 142.679 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -74,10 +75,24 @@ position = Vector2( 1550.93, 274.885 )
 navpoly = SubResource( 2 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 280.569, 97.2742 )
 
 [node name="Drone2" parent="Navigation2D" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 1209.66, 66.1611 )
 
 [node name="Drone3" parent="Navigation2D" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 1534.93, 28.5243 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/sky"]
+position = Vector2( 35.5612, -31.3274 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
+centered = false
