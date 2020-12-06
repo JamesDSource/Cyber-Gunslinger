@@ -1,20 +1,29 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tilesets/Dirt/Dirt.tres" type="TileSet" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Logo/LevelComplete.png" type="Texture" id=2]
 [ext_resource path="res://Game/worldComplete.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="CapsuleShape2D" id=3]
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 399.069, 83.3302, 122.068, 84.1239, 123.655, 50.7885, 287.158, 49.2011, 399.863, 47.6137 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 0, 3, 4 ) ]
 outlines = [ PoolVector2Array( 287.158, 49.2011, 399.863, 47.6137, 399.069, 83.3302, 122.068, 84.1239, 123.655, 50.7885 ) ]
+
+[sub_resource type="NavigationPolygon" id=4]
+vertices = PoolVector2Array( 522.325, 102.586, 765.197, 100.998, 765.197, 134.334, 523.912, 132.746 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 522.325, 102.586, 765.197, 100.998, 765.197, 134.334, 523.912, 132.746 ) ]
+
+[sub_resource type="NavigationPolygon" id=5]
+vertices = PoolVector2Array( 1054.1, 246.833, 1177.92, 246.833, 1177.92, 373.825, 1058.07, 373.825 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+outlines = [ PoolVector2Array( 1054.1, 246.833, 1177.92, 246.833, 1177.92, 373.825, 1058.07, 373.825 ) ]
 
 [node name="Level3" type="Node"]
 
@@ -32,11 +41,14 @@ position = Vector2( 525, 304 )
 script = ExtResource( 3 )
 
 [node name="icon" type="Sprite" parent="worldComplete"]
-scale = Vector2( 0.676718, 0.66629 )
+position = Vector2( 422.894, -162.327 )
+scale = Vector2( 1.38938, 0.960701 )
 texture = ExtResource( 2 )
+hframes = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="worldComplete"]
-shape = SubResource( 1 )
+position = Vector2( 421.783, -159.08 )
+shape = SubResource( 3 )
 one_way_collision_margin = 0.0
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
@@ -56,11 +68,21 @@ direction = Vector2( -1, 0 )
 [node name="NavigationPolygonInstance2" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 2 )
 
+[node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
+position = Vector2( 0, -1 )
+navpoly = SubResource( 4 )
+
+[node name="NavigationPolygonInstance3" type="NavigationPolygonInstance" parent="Navigation2D"]
+navpoly = SubResource( 5 )
+
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 6 )]
-position = Vector2( 364.071, 65.3249 )
+position = Vector2( 355.884, 68.5868 )
 
 [node name="Drone2" parent="Navigation2D" instance=ExtResource( 6 )]
-position = Vector2( 286.15, 189.996 )
+position = Vector2( 284.072, 195.425 )
+
+[node name="Drone3" parent="Navigation2D" instance=ExtResource( 6 )]
+position = Vector2( 1086.64, 292.439 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
