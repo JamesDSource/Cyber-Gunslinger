@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Tilesets/Dirt/Dirt.tres" type="TileSet" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
 [ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Game/Portal2.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 17, 20 )
@@ -35,6 +37,7 @@ visible = false
 
 [node name="Portal" type="Area2D" parent="."]
 position = Vector2( 232.638, 47.3762 )
+script = ExtResource( 7 )
 
 [node name="icon" type="Sprite" parent="Portal"]
 position = Vector2( 3.2367, -8.37648 )
@@ -54,3 +57,6 @@ position = Vector2( 113.844, 203.647 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 navpoly = SubResource( 2 )
+
+[node name="Drone" parent="Navigation2D" instance=ExtResource( 6 )]
+position = Vector2( 161.22, 135.765 )
