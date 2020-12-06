@@ -1,17 +1,63 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://titlescreen/font/pdark33.tres" type="DynamicFont" id=1]
+[ext_resource path="res://finish/Restart.gd" type="Script" id=2]
+[ext_resource path="res://finish/StartMenu.gd" type="Script" id=3]
+[ext_resource path="res://Pause/theme.tres" type="Theme" id=4]
 
-[node name="Node" type="Node"]
-
-[node name="Label" type="Label" parent="."]
+[node name="Control" type="Control"]
 margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 1 )
-custom_colors/font_color_shadow = Color( 0.0678291, 0.186061, 0.96468, 1 )
-custom_constants/shadow_offset_x = 0
-custom_constants/shadow_offset_y = 5
-text = "C o n g r a t u l a t i o n!"
+margin_bottom = 40.0
+theme = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Restart" type="Button" parent="."]
+margin_left = 182.217
+margin_top = 138.378
+margin_right = 507.217
+margin_bottom = 180.378
+custom_fonts/font = ExtResource( 1 )
+text = "replay"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartMenu" type="Button" parent="."]
+margin_left = 182.217
+margin_top = 212.0
+margin_right = 499.217
+margin_bottom = 260.0
+custom_fonts/font = ExtResource( 1 )
+text = "main menu"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="."]
+margin_left = 182.217
+margin_top = 289.432
+margin_right = 492.217
+margin_bottom = 345.432
+custom_fonts/font = ExtResource( 1 )
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 102.459
+margin_top = 63.8108
+margin_right = 574.459
+margin_bottom = 93.8108
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color_shadow = Color( 0.0862745, 0.176471, 0.901961, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 5
+text = "c o n g r a t u l a t  i o n"
+[connection signal="pressed" from="Restart" to="Restart" method="_on_Restart_pressed"]
+[connection signal="pressed" from="StartMenu" to="Restart" method="_on_StartMenu_pressed"]
+[connection signal="pressed" from="Exit" to="Restart" method="_on_Exit_pressed"]

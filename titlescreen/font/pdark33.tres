@@ -3,5 +3,5 @@
 [ext_resource path="res://titlescreen/font/pdark.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 48
+size = 25
 font_data = ExtResource( 1 )
