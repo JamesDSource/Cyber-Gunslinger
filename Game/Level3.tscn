@@ -53,6 +53,7 @@ position = Vector2( 279.8, 189.202 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 7 )]
+visible = false
 margin_left = -17.8773
 margin_top = -18.4997
 margin_right = -17.8773
