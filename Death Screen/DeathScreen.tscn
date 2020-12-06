@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Death Screen/Restart.gd" type="Script" id=2]
+[ext_resource path="res://Pause/Button.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -36,7 +37,14 @@ margin_right = 397.034
 margin_bottom = 226.858
 custom_fonts/font = SubResource( 2 )
 text = "Restart"
+flat = true
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Sprite" parent="Restart"]
+show_behind_parent = true
+position = Vector2( 71.4522, 21.5563 )
+scale = Vector2( 0.368855, 0.10895 )
+texture = ExtResource( 3 )
