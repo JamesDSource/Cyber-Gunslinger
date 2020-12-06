@@ -12,7 +12,7 @@ func _on_Resume_pressed():
 	visible = !visible
 
 func _on_MainScreen_pressed():
-	get_tree().change_scene("res://titlescreen/TitleScreen.tscn")
+	get_tree().change_scene("res://titlescreen/MainScreen.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()
