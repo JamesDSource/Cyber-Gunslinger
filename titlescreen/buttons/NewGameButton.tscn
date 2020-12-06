@@ -3,7 +3,12 @@
 [ext_resource path="res://titlescreen/buttons/MenuButton.tscn" type="PackedScene" id=1]
 
 [node name="NewGameButton" instance=ExtResource( 1 )]
+margin_left = 94.0
+margin_right = 545.0
 
 [node name="Label" parent="." index="0"]
-custom_colors/font_color_shadow = Color( 0.803922, 0.0901961, 0.0901961, 1 )
+anchor_right = 1.096
+anchor_bottom = 0.5
+margin_right = -38.296
+margin_bottom = 82.5636
 text = "N e w  G a m e"

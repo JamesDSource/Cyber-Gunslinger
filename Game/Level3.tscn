@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tilesets/Dirt/Dirt.tres" type="TileSet" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Game/worldComplete.gd" type="Script" id=3]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="Level3" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131085, 0, 196611, 131089, 0, 0, 131090, 0, 2, 196617, 0, 196611, 196625, 0, 65536, 196626, 0, 65538, 262144, 0, 196608, 262145, 0, 7, 262148, 0, 196611, 262152, 0, 196611, 262154, 0, 196611, 262156, 0, 196611, 262161, 0, 65536, 262162, 0, 65538, 327681, 0, 131075, 327695, 0, 3, 327697, 0, 65536, 327698, 0, 65538, 393219, 0, 196611, 393222, 0, 196611, 393226, 0, 196611, 393231, 0, 65539, 393233, 0, 65536, 393234, 0, 65538, 458765, 0, 196611, 458767, 0, 65539, 458769, 0, 65536, 458770, 0, 65538, 524296, 0, 196611, 524299, 0, 196608, 524300, 0, 7, 524303, 0, 65539, 524305, 0, 65536, 524306, 0, 65538, 589836, 0, 65539, 589839, 0, 65539, 589841, 0, 65536, 589842, 0, 65538, 655372, 0, 196612, 655373, 0, 196610, 655375, 0, 196612, 655376, 0, 196609, 655377, 0, 196614, 655378, 0, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 18, 122 )
+
+[node name="worldComplete" type="Area2D" parent="."]
+position = Vector2( 525, 304 )
+script = ExtResource( 3 )
+
+[node name="icon" type="Sprite" parent="worldComplete"]
+scale = Vector2( 0.676718, 0.66629 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="worldComplete"]
+shape = SubResource( 1 )
+one_way_collision_margin = 0.0
