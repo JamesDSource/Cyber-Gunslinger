@@ -37,4 +37,4 @@ navpoly = SubResource( 1 )
 position = Vector2( 336, 48 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
-position = Vector2( 568, 110 )
+position = Vector2( 568, 112 )
