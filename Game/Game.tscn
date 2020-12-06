@@ -19,7 +19,7 @@ extents = Vector2( 16, 20 )
 [node name="Game" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 174.399, 170.173 )
+position = Vector2( 92.399, 166.673 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
@@ -39,7 +39,7 @@ position = Vector2( 0, -64 )
 navpoly = SubResource( 1 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 4 )]
-position = Vector2( 336, 48 )
+position = Vector2( 330, 36 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
 position = Vector2( 568, 110 )
