@@ -14,7 +14,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pause" type="Label" parent="."]
+[node name="BlackOverlay" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.235294 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Label" parent="BlackOverlay"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -88.0
@@ -33,41 +41,39 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="BlackOverlay"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_right = 2.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BlackOverlay/CenterContainer"]
 margin_left = 225.0
 margin_top = 129.0
 margin_right = 414.0
 margin_bottom = 230.0
 alignment = 1
 
-[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="BlackOverlay/CenterContainer/VBoxContainer"]
 margin_right = 189.0
 margin_bottom = 31.0
 custom_fonts/font = ExtResource( 2 )
 text = "Resume"
 
-[node name="MainScreen" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="MainScreen" type="Button" parent="BlackOverlay/CenterContainer/VBoxContainer"]
 margin_top = 35.0
 margin_right = 189.0
 margin_bottom = 66.0
 custom_fonts/font = ExtResource( 2 )
 text = "main menu"
 
-[node name="Quit" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="BlackOverlay/CenterContainer/VBoxContainer"]
 margin_top = 70.0
 margin_right = 189.0
 margin_bottom = 101.0
 custom_fonts/font = ExtResource( 2 )
 text = "Quit"
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/MainScreen" to="." method="_on_MainScreen_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="BlackOverlay/CenterContainer/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="BlackOverlay/CenterContainer/VBoxContainer/MainScreen" to="." method="_on_MainScreen_pressed"]
+[connection signal="pressed" from="BlackOverlay/CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
