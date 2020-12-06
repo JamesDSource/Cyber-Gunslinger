@@ -13,20 +13,26 @@ var animation = "Idle"
 var animationSet = ""
 
 var motion = Vector2()
+var jump_buffer = 0
 
 var hp_max = 8.0
 var hp = hp_max
+var iframes = 1
+var iframes_remaing = 0
 
 func damage(hp_damage):
-	hp = max(hp - hp_damage, 0)
-	$CanvasLayer/HUD/HealthBar.value = 100*(hp/hp_max)
-	$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
+	if iframes_remaing <= 0:
+		hp = max(hp - hp_damage, 0)
+		$CanvasLayer/HUD/HealthBar.value = 100*(hp/hp_max)
+		$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
+		iframes_remaing = iframes
 
 func _ready():
 	damage(0)
 	add_to_group("Player")
 
 func _process(delta):
+	iframes_remaing -= delta
 	$CanvasLayer/HUD/RepeatingTexture.hide = bullets - bullets_remaining
 	
 	if animation != animationSet:
@@ -54,6 +60,8 @@ func _process(delta):
 		
 		can_shoot = false
 		$ShootTimer.start()
+	if Input.is_action_pressed("Reload"):
+		reload()
 
 func _physics_process(delta):
 	motion.y += GRAVITY
@@ -68,18 +76,20 @@ func _physics_process(delta):
 		motion.x = 0
 	
 	if is_on_floor():
+		jump_buffer = 0.2
 		if motion.x == 0:
 			animation = "Idle"
 		else:
 			animation = "Run"
-
-		if Input.is_action_just_pressed("Jump"):
-			motion.y = JUMP
 	else:
+		jump_buffer -= delta
 		if motion.y > 0:
 			animation = "Fall"
 		else:
 			animation = "Jump"
+	
+	if Input.is_action_just_pressed("Jump") && jump_buffer > 0:
+			motion.y = JUMP
 	
 	motion = move_and_slide(motion, Vector2.UP)
 
@@ -87,9 +97,17 @@ func _physics_process(delta):
 func _on_ShootTimer_timeout():
 	can_shoot = true
 
+func reload():
+	#Play reload sound here
+	if bullets_remaining<2:
+		bullets_remaining += 1
+		yield(get_tree().create_timer(0.3), "timeout")
+		if bullets_remaining<2:
+			bullets_remaining += 1
+	
+		
+	
+
 
 func _on_ReloadTimer_timeout():
-	#Play reload sound here
-	bullets_remaining += 1
-	yield(get_tree().create_timer(0.3), "timeout")
-	bullets_remaining += 1
+	reload()
