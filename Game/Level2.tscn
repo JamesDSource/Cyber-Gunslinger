@@ -49,11 +49,9 @@ shape = SubResource( 1 )
 
 [node name="Sawblade" parent="." instance=ExtResource( 5 )]
 position = Vector2( 491.439, 236.881 )
-direction = Vector2( 1, 0 )
 
 [node name="Sawblade2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 113.844, 203.647 )
-direction = Vector2( 1, 0 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
