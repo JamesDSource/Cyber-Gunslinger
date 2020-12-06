@@ -32,7 +32,12 @@ enabled = true
 polygon = PoolVector2Array( 11, -7.6, 11, 7, 7.6, 11, -7, 11, -11, 7.6, -11, -7.6, -7, -10.9, 7, -11 )
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 1.2
+wait_time = 0.5
 one_shot = true
+autostart = true
+
+[node name="RechargeTimer" type="Timer" parent="."]
+wait_time = 2.0
 [connection signal="body_entered" from="DetectionRadius" to="." method="_on_DetectionRadius_body_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="timeout" from="RechargeTimer" to="." method="_on_RechargeTimer_timeout"]
