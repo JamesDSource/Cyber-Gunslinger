@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sawblade/Sawblade.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tilesets/Metal/Metal.tres" type="TileSet" id=3]
 [ext_resource path="res://finish/congrats.tscn" type="PackedScene" id=4]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Parallax Layers/Metal/MetalLayer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/Portal/Portal.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 313.349, 68.5634, 313.349, 223.359, 37.7375, 222.415, 36.7936, 73.2828 )

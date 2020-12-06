@@ -4,10 +4,11 @@
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Portal/Portal.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sawblade/sawblade.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sawblade/Sawblade.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Drone/Drone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Game/Level3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Parallax Layers/Sky/SkyLayer.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 136, 112, 136, 48, 176, 48, 184, 128, 136, 168, 312, 168, 264, 128, 272, 24, 336, 24, 336, 168, 1128, -192, 1760, -192, 1760, 0, 1440, 0, 1368, 24, 1264, 64, 1152, 64, 688, 96, 1008, 88, 776, 96, 1000, 152, 960, 152, 960, 96, 776, 168, 680, 168, 688, 120, 496, 200, 312, 200, 472, 192, 496, 168, 496, 152, 560, 136, 584, 120 )
