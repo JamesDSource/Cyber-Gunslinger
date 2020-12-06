@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Pause/Pause.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sawblade/Sawblade.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Tilesets/Metal/Metal.tres" type="TileSet" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Game/Portal4.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 16 )
 
 [node name="Level4" type="Node"]
-script = ExtResource( 3 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -23,12 +25,14 @@ position = Vector2( 397.786, 280.073 )
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 2 )]
 visible = false
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2( 575.576, 174.737 )
+[node name="Portal4" type="Area2D" parent="."]
+position = Vector2( 45.255, 205.769 )
+script = ExtResource( 5 )
 
-[node name="icon" type="Sprite" parent="Area2D"]
-position = Vector2( -1.52588e-05, 0 )
-scale = Vector2( 0.791196, 0.793462 )
-texture = ExtResource( 5 )
+[node name="icon" type="Sprite" parent="Portal4"]
+position = Vector2( 3.36973, 0.462738 )
+scale = Vector2( 0.679591, 0.53596 )
+texture = ExtResource( 3 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portal4"]
+shape = SubResource( 1 )
