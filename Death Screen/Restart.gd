@@ -5,7 +5,7 @@ func _process(delta):
 	visible = true if!(get_tree().paused) && player_dead else false
 
 func _on_Restart_pressed():
-	get_tree().change_scene("res://Game/Game.tscn")
+	get_tree().reload_current_scene()
 
 
 func _on_MainMenu_pressed():

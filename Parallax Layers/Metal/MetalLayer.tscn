@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Parallax Layers/Metal/MetalBackground.png" type="Texture" id=1]
+
+[node name="ParallaxLayer" type="ParallaxLayer"]
+motion_scale = Vector2( 0.8, 0.8 )
+motion_mirroring = Vector2( 910, 780 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 910, 780 )

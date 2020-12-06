@@ -36,7 +36,8 @@ func damage(hp_damage):
 		$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
 		iframes_remaing = iframes
 		if hp <= 0:
-			state = PLAYERSTATE.DEAD
+			pass
+			#state = PLAYERSTATE.DEAD
 
 func _ready():
 	damage(0)

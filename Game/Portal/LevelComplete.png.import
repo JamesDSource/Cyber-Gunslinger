@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/MetalBackground.png-49f29d4648846d88055337d9d4a46c48.stex"
+path="res://.import/LevelComplete.png-13534782eabee59ce7b7d534385209ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Logo/MetalBackground.png"
-dest_files=[ "res://.import/MetalBackground.png-49f29d4648846d88055337d9d4a46c48.stex" ]
+source_file="res://Game/Portal/LevelComplete.png"
+dest_files=[ "res://.import/LevelComplete.png-13534782eabee59ce7b7d534385209ce.stex" ]
 
 [params]
 
