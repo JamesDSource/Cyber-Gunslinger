@@ -11,12 +11,12 @@ func _ready():
 	pass # Replace with function body.
 
 func _on_Restart_pressed():
-	get_tree().change_sceen("res://Game/Game.tscn")
+	get_tree().change_scene("res://Game/Game.tscn")
 	pass
 
 
 func _on_StartMenu_pressed():
-	get_tree().change_sceen("res://titlescreen/MainScreen.tscn")
+	get_tree().change_scene("res://titlescreen/MainScreen.tscn")
 	pass # Replace with function body.
 
 
