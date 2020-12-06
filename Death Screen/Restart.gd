@@ -5,3 +5,8 @@ func _process(delta):
 
 func _on_Restart_pressed():
 	get_tree().change_scene("res://Game/Game.tscn")
+
+
+func _on_MainMenu_pressed():
+	get_tree().change_scene("res://titlescreen/MainScreen.tscn")
+	pass # Replace with function body.
