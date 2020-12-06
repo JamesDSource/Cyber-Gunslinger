@@ -35,6 +35,8 @@ func damage(hp_damage):
 		$CanvasLayer/HUD/HealthBar.value = 100*(hp/hp_max)
 		$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
 		iframes_remaing = iframes
+		if hp <= 0:
+			state = PLAYERSTATE.DEAD
 
 func _ready():
 	damage(0)
@@ -47,7 +49,8 @@ func _process(delta):
 	if animation != animationSet:
 		$AnimationPlayer.play(animation)
 		animationSet = animation
-	
+		
+	$Reloading.visible = false
 	match(state):
 		PLAYERSTATE.FREE:
 			can_move = true
@@ -74,11 +77,16 @@ func _process(delta):
 				state = PLAYERSTATE.RELOAD
 		
 		PLAYERSTATE.RELOAD:
+			$Reloading.visible = true
 			can_move = true
 			rotate_gun()
-		
+			if bullets_remaining == bullets: state = PLAYERSTATE.FREE
+			elif $ReloadTimer.time_left == 0:
+				$ReloadTimer.start()
+			
 		PLAYERSTATE.DEAD:
 			can_move = false
+			$CanvasLayer/DeathScreen.player_dead = true
 
 func _physics_process(delta):
 	motion.y += GRAVITY
@@ -113,18 +121,7 @@ func _physics_process(delta):
 
 
 func _on_ShootTimer_timeout():
-	can_shoot = true
-
-func reload():
-	#Play reload sound here
-	if bullets_remaining<2:
-		bullets_remaining += 1
-		yield(get_tree().create_timer(0.3), "timeout")
-		if bullets_remaining<2:
-			bullets_remaining += 1
-	
-		
-	
+	can_shoot = true	
 
 func rotate_gun():
 	var gun_angle = rad2deg($Sprite/GunPosition.global_position.angle_to_point(get_global_mouse_position())) + 180
@@ -134,4 +131,4 @@ func rotate_gun():
 
 
 func _on_ReloadTimer_timeout():
-	reload()
+	bullets_remaining += 1
