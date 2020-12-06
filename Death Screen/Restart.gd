@@ -1,4 +1,5 @@
 extends Node2D
+
 var player_dead = false
 func _process(delta):
 	visible = true if!(get_tree().paused) && player_dead else false
