@@ -61,6 +61,8 @@ func _process(delta):
 		can_shoot = false
 		$ShootTimer.start()
 	if Input.is_action_pressed("Reload"):
+		can_shoot = false
+		$ShootTimer.start()
 		reload()
 
 func _physics_process(delta):
