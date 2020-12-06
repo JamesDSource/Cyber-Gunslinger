@@ -4,6 +4,8 @@
 
 A 2D cyberpunk platformer built with the Godot engine.
 
+Winner of the Best in Class award at Virtual Codeday 2020.
+
 **Controls**
 
 Left Click/Left Alt: Fire shotgun
