@@ -10,7 +10,7 @@
 [ext_resource path="res://Player/GunshotSound.wav" type="AudioStream" id=8]
 [ext_resource path="res://HUD/HUD.tscn" type="PackedScene" id=9]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=1]
 resource_name = "Shoot"
 length = 0.2
 step = 0.01
@@ -27,12 +27,11 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=2]
 radius = 6.07219
 height = 20.7407
 
-[sub_resource type="Animation" id=2]
-resource_name = "Fall"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -70,7 +69,7 @@ tracks/2/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -109,8 +108,7 @@ tracks/2/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Jump"
+[sub_resource type="Animation" id=5]
 length = 0.6
 step = 0.2
 tracks/0/type = "value"
@@ -150,7 +148,7 @@ tracks/2/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -215,21 +213,21 @@ position = Vector2( 22, 0 )
 stream = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/GunPosition"]
-anims/Shoot = SubResource( 6 )
+anims/Shoot = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.85616, 2.03293 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fall = SubResource( 2 )
-anims/Idle = SubResource( 3 )
-anims/Jump = SubResource( 4 )
-anims/Run = SubResource( 5 )
+anims/Fall = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Jump = SubResource( 5 )
+anims/Run = SubResource( 6 )
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.2
