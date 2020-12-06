@@ -9,7 +9,7 @@
 [ext_resource path="res://Game/Portal2.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 17, 20 )
+extents = Vector2( 20, 20 )
 
 [sub_resource type="NavigationPolygon" id=2]
 vertices = PoolVector2Array( 143.022, 89.5578, 53.9269, 90.2649, 53.9269, 56.3238, 167.064, 55.6167, 164.943, 127.742, 143.73, 148.248, 168.478, 148.248, 328.993, 116.429, 432.938, 178.654, 497.99, 169.461, 501.526, 193.503, 313.435, 194.917, 329.699, 171.582, 314.849, 149.662 )
@@ -59,4 +59,4 @@ position = Vector2( 113.844, 203.647 )
 navpoly = SubResource( 2 )
 
 [node name="Drone" parent="Navigation2D" instance=ExtResource( 6 )]
-position = Vector2( 70.0036, 75.6605 )
+position = Vector2( 70.0036, 76.3676 )

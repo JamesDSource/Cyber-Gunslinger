@@ -22,10 +22,10 @@ outlines = [ PoolVector2Array( 201.007, 75.4162, 580.724, 75.4162, 580.017, 144.
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 196621, 0, 196611, 262147, 0, 196611, 393222, 0, 196611, 458753, 0, 196611, 458761, 0, 196611, 458767, 0, 196608, 458768, 0, 196610, 524306, 0, 3, 589836, 0, 196611, 589842, 0, 65539, 655364, 0, 196611, 655378, 0, 131075 )
+tile_data = PoolIntArray( 262147, 0, 196611, 393222, 0, 196611, 458753, 0, 196611, 458761, 0, 196611, 458767, 0, 196611, 524306, 0, 3, 589836, 0, 196611, 589842, 0, 65539, 655378, 0, 131075 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 397.786, 280.073 )
+position = Vector2( 589.727, 234.052 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
