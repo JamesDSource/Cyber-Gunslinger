@@ -36,8 +36,7 @@ func damage(hp_damage):
 		$CanvasLayer/HUD/HealthBar/Label.text = String(hp) + "/" + String(hp_max)
 		iframes_remaing = iframes
 		if hp <= 0:
-			pass
-			#state = PLAYERSTATE.DEAD
+			state = PLAYERSTATE.DEAD
 
 func _ready():
 	damage(0)
@@ -73,7 +72,6 @@ func _process(delta):
 				can_shoot = false
 				$ShootTimer.start()
 				
-			#This is meant to manually start a reload, but it doesn't seem to work properly.
 			if Input.is_action_just_pressed("Reload"):
 				state = PLAYERSTATE.RELOAD
 		
