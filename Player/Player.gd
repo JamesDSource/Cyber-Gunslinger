@@ -60,6 +60,10 @@ func _process(delta):
 		
 		can_shoot = false
 		$ShootTimer.start()
+	if Input.is_action_pressed("Reload"):
+		can_shoot = false
+		$ShootTimer.start()
+		reload()
 
 func _physics_process(delta):
 	motion.y += GRAVITY
@@ -95,9 +99,17 @@ func _physics_process(delta):
 func _on_ShootTimer_timeout():
 	can_shoot = true
 
+func reload():
+	#Play reload sound here
+	if bullets_remaining<2:
+		bullets_remaining += 1
+		yield(get_tree().create_timer(0.3), "timeout")
+		if bullets_remaining<2:
+			bullets_remaining += 1
+	
+		
+	
+
 
 func _on_ReloadTimer_timeout():
-	#Play reload sound here
-	bullets_remaining += 1
-	yield(get_tree().create_timer(0.3), "timeout")
-	bullets_remaining += 1
+	reload()
