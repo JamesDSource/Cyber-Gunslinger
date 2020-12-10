@@ -1,4 +1,4 @@
-# Cyber-Gunslinger
+# Cyber Gunslinger
 
 ![Logo](https://github.com/JamesDSource/Codeday-December-2020-Game/blob/main/Logo/CyberGunslinger.png?raw=true)
 
